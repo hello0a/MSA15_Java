@@ -15,7 +15,5 @@ public class Builder {
 									.energy(200)
 									.build();
 		System.out.println(pikachu2);
-		
-		
 	}
 }
