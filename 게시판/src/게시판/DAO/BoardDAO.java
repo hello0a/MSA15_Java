@@ -79,7 +79,7 @@ public class BoardDAO extends JDBConnection {
 			psmt.setInt( 1, no);	// 1번째 ? 파라미터에 매핑
 			
 			// 2. SQL 실행 요청 -> 결과 Resultset (rs)
-			rs = psmt.executeQuery();
+			rs = psmt.executeQuery(); // 조회 명령어 요청 메서드(SELECT)
 			
 			// 3. 조회된 결과 1건 가져오기
 			if( rs.next() ) {		// next() : 조회 결과의 다음 데이터로 이동
@@ -117,6 +117,7 @@ public class BoardDAO extends JDBConnection {
 			result = psmt.executeUpdate();			// SQL 실행 요청
 			// * executeUpdate()
 			// SQL (INSERT, UPDATE, DELETE ) 실행 시 적용된 데이터 개수를 int 타입으로 반환한다.
+			// 위의 3가지 명령어 요청 메서드
 			// ex) 게시글 1개 적용 성공 시, result : 1
 			// 					실패 시, result : 0
 		} catch (Exception e) {

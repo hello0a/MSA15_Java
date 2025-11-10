@@ -11,9 +11,10 @@ import lombok.Data;
 public class JDBConnection {
 	
 	public Connection con;				// 연결된 드라이버에 SQL을 요청할 객체를 생성하는 클래스
-	public Statement stmt;				// SQL 실행 요청을 하는 클래스
-	public PreparedStatement psmt;		// Statement 에서 ? 파라미터 확장기능을 추가로 제공하는 클래스
-	public ResultSet rs;				// SQL 실행 결과를 받아오는 클래스
+	public Statement stmt;				// SQL 실행 요청을 하는 클래스 (단순 sql 명령어 요청 인터페이스)
+	public PreparedStatement psmt;		// Statement 에서 ? 파라미터 확장기능을 추가로 제공하는 클래스 (인터페이스)
+										// setXXX (번호, 매핑 값) : ? 파라미터(번호)에 연결할 값 세팅
+	public ResultSet rs;				// SQL 실행 결과를 받아오는 클래스 (executeQuery 조회 결과)
 	
 	
 	// 기본 생성자
@@ -48,5 +49,6 @@ public class JDBConnection {
 //	public static void main(String[] args) {
 //		JDBConnection jdbc = new JDBConnection();
 //	}
+	
 
 }
