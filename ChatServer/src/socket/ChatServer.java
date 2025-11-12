@@ -74,9 +74,11 @@ public class ChatServer {
 				// 계속 채팅
 				String message;
 				while ((message = in.readLine()) != null) {
+					// 여기서 out 은 내가 보고 있는 출력 out
 					System.out.println("[" + clientName + "] 메시지 : " + message);
 
 					// 브로드 캐스트
+					// 여기서 out 은 PrintWriter 에서의 out으로, 내가 보는 메세지가 아닌 밖으로 (채팅 상대방)에게 내보내는 out
 					broadcast("[" + clientName + "] 메시지 : " + message, out);
 					
 					if (message.equalsIgnoreCase("exit")) {
@@ -99,6 +101,7 @@ public class ChatServer {
 				}
 			}
 			// 마지막 입출력 2개 client -> socket.getInetAddress()
+			// 물어보니 상관 없다고 하셨움..!!
 		}
 		
 	}
