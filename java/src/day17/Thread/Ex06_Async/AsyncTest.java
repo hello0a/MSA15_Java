@@ -72,7 +72,8 @@ public class AsyncTest {
 		person2.start();	// money : 10000
 							// money(0.2초) : 9000
 							// money(3초) : 13000
-//		System.out.println("잔액 : " + AsyncTest.myBank.getMoney());
-		System.out.println(AsyncTest.myBank.getMoney());
+		// 둘이 출력 차이나는 이유 : 간발의 차
+		System.out.println("잔액 : " + AsyncTest.myBank.getMoney());
+//		System.out.println(AsyncTest.myBank.getMoney());
 	}
 }
